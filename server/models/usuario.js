@@ -40,6 +40,7 @@ let usuarioSchema = new Schema({
     }
 });
 
+// Se excluye la contraseña para que no sea retorne cuando se devuelva el json con el usuario
 usuarioSchema.methods.toJSON = function() {
     let user = this;
     let userObject = user.toObject();
