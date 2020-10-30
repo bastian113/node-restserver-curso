@@ -47,3 +47,8 @@ process.env.URLDB = urlDB;
  * heroku config:set nombre_vble = valor_vble
  * heroku config:unset nombre_vble
  */
+
+// ================================
+// Google Client ID
+// ================================
+process.env.CLIENT_ID = process.env.CLIENT_ID || '332630524776-v6rktf89qhh28t49o664qvt1ki072eh3.apps.googleusercontent.com';
