@@ -1,12 +1,16 @@
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 
+
 let rolesValidos = {
     values: ['ADMIN_ROLE', 'USER_ROLE'],
-    message: '{VALUE} no es un rol válido' //el VALUE sería el rol enviado desde el front
+    message: '{VALUE} no es un rol válido'
 };
 
+
 let Schema = mongoose.Schema;
+
+
 let usuarioSchema = new Schema({
     nombre: {
         type: String,
@@ -40,14 +44,16 @@ let usuarioSchema = new Schema({
     }
 });
 
-// Se excluye la contraseña para que no sea retorne cuando se devuelva el json con el usuario
+
 usuarioSchema.methods.toJSON = function() {
+
     let user = this;
     let userObject = user.toObject();
     delete userObject.password;
 
     return userObject;
-};
+}
+
 
 usuarioSchema.plugin(uniqueValidator, { message: '{PATH} debe de ser único' });
 

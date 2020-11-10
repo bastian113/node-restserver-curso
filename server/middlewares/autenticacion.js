@@ -1,13 +1,12 @@
 const jwt = require('jsonwebtoken');
 
-// ================================
+
+// =====================
 // Verificar Token
-// ================================
+// =====================
 let verificaToken = (req, res, next) => {
 
-    let token = req.get('token'); // De esta manera puedo acceder al header con nombre "token"
-
-    console.log(token);
+    let token = req.get('token');
 
     jwt.verify(token, process.env.SEED, (err, decoded) => {
 
@@ -20,26 +19,26 @@ let verificaToken = (req, res, next) => {
             });
         }
 
-        req.usuario = decoded.usuario; // Como en el payload sabemos que viene un objeto usuario, lo podemos tomar así
-
-        // Si no llamo este "next" la ejecución se quedará detenida en este lugar.
+        req.usuario = decoded.usuario;
         next();
 
     });
 
+
+
 };
 
-
-// ================================
-// Verificar AdminRole
-// ================================
-let verificaAdminRole = (req, res, next) => {
+// =====================
+// Verifica AdminRole
+// =====================
+let verificaAdmin_Role = (req, res, next) => {
 
     let usuario = req.usuario;
 
     if (usuario.role === 'ADMIN_ROLE') {
         next();
     } else {
+
         return res.json({
             ok: false,
             err: {
@@ -47,12 +46,11 @@ let verificaAdminRole = (req, res, next) => {
             }
         });
     }
-
-
 };
+
 
 
 module.exports = {
     verificaToken,
-    verificaAdminRole
+    verificaAdmin_Role
 }

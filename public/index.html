@@ -3,18 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Google Sign-In Demo</title>
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="332630524776-v6rktf89qhh28t49o664qvt1ki072eh3.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="332630524776-jc9frrv48mredatnjrc6d1t4465leqd8.apps.googleusercontent.com">
 
 </head>
 
 <body>
 
+
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
 
     <a href="#" onclick="signOut();">Sign out</a>
     <script>
@@ -26,6 +28,7 @@
         }
     </script>
 
+
     <script>
         function onSignIn(googleUser) {
             var profile = googleUser.getBasicProfile();
@@ -35,9 +38,6 @@
             console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 
             var id_token = googleUser.getAuthResponse().id_token;
-
-            console.log(id_token);
-
             var xhr = new XMLHttpRequest();
             xhr.open('POST', '/google');
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -45,6 +45,7 @@
                 console.log('Signed in as: ' + xhr.responseText);
             };
             xhr.send('idtoken=' + id_token);
+
         }
     </script>
 
