@@ -80,10 +80,10 @@ app.post('/usuario', [verificaToken, verificaAdmin_Role], function(req, res) {
 
 app.put('/usuario/:id', [verificaToken, verificaAdmin_Role], function(req, res) {
 
-    let id = req.params.id;
+    let id = req.params.id; //este .id debe ser el mismo nombre que se recibe en la URL /:id
     let body = _.pick(req.body, ['nombre', 'email', 'img', 'role', 'estado']);
 
-    Usuario.findOneAndUpdate(id, body, { new: true, runValidators: true }, (err, usuarioDB) => {
+    Usuario.findOneAndUpdate(id, body, { new: true, runValidators: true }, (err, usuarioDB) => { // El parámetro body es la información que yo quiero actualizar
 
         if (err) {
             return res.status(400).json({
@@ -91,8 +91,6 @@ app.put('/usuario/:id', [verificaToken, verificaAdmin_Role], function(req, res) 
                 err
             });
         }
-
-
 
         res.json({
             ok: true,

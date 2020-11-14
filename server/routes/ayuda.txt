@@ -1,0 +1,4 @@
+Para crear una nueva ruta:
+
+1. Crear el archivo en la carpeta "routes".
+2. Agregarlo en el archivo index.js
