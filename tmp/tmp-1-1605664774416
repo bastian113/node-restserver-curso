@@ -1,0 +1,200 @@
+# Servicios de autenticación - Middle RSA
+webservice.rsa.autenticar=http://boinfbxsoaq:24230/services/security/LegalCustomerAuthentication?wsdl
+
+# Servicios de administración - Middle RSA
+webservice.rsa.admon=http://boinfbxsoaq:24230/services/security/LegalCustomerTokenManagement?wsdl
+
+# Costo por transacción
+webservice.bcr.costoxtrx=http://boinfbxsoaq:20200/WSConPlataformas/ServiciosConsultasPlat.jws?WSDL
+
+# Notas débito
+webservice.bcr.lineaSimple=http://boinfbxsoaq:20200/WSSLiSimples/ServiciosLineaSimples.jws?WSDL
+# Servicios de seguridad
+webservice.bcr.seguridad=file:///gh/gh_web/PORTALPJ3/Autenticacion/wsdl/WSAdmonSeguridad.wsdl
+
+# Servicios inalambria
+webservice.inalambria.sms=http://boinfbxdpwq-lb:25520/Inalambria/services/wsSoap?WSDL
+
+# Servicios Clientes Phoenix
+webservice.phoenix.admon=http://boinfbxsoaq:20200/WSSLiClientesPh/ClientesPh.jws?WSDL
+
+# Ruta de la llave para desencriptar la clave del email
+mail.decrypt.key=/gh_web/PORTALPJ3/Autenticacion/keys/keyEmail.key
+
+# Parametros eMail
+mail.smtp.host=boinfmwlsq
+mail.transport.protocol=smtp
+mail.smtp.port=18000
+mail.smtp.auth=false
+mail.user=extractos@itau.co
+mail.password=
+#mail.password=3i2mZq2TWuc=
+
+# Ruta de la llave para desencriptar la clave del sms
+sms.decrypt.key=/gh_web/PORTALPJ3/Autenticacion/keys/keySMS.key
+
+# Parametros sms
+sms.user=sysgldb0-PJ3
+sms.password=bN9ISVo6iZ42l25hPK7tPQ\=\=
+sms.priority=1
+sms.maxLength=140
+
+# Parámetros de los Jobs Hour(0-23), Minutes(0-59)
+jobs.tamanoCacheEventos=50
+
+#1
+jdSendMessageExpirationJob.name=Envio Mensaje Vencimiento
+jdSendMessageExpirationJob.hour=23
+jdSendMessageExpirationJob.minutes=40
+
+#2
+jdTokenExpirationJob.name=Vencimiento Token
+jdTokenExpirationJob.hour=23
+jdTokenExpirationJob.minutes=45
+
+#3
+jdNoContactTimeJob.name=Tiempo no Contacto
+jdNoContactTimeJob.hour=23
+jdNoContactTimeJob.minutes=50
+
+#4
+jdResetContErrAutenticJob.name=Contador Err Autenticar
+jdResetContErrAutenticJob.hour=23
+jdResetContErrAutenticJob.minutes=55
+
+#5
+jdStockAlertJob.name=Alerta de Stock
+jdStockAlertJob.hour=10
+jdStockAlertJob.minutes=00
+pStockAlertJob.cantidadMinima=5
+pStockAlertJob.email=oscar.lopez@grupohelm.com
+pStockAlertJob.celular=
+
+#6
+jdTokenEMExpirationJob.name=Vencimiento Token Em
+jdTokenEMExpirationJob.hour=00
+jdTokenEMExpirationJob.minutes=05
+
+jdSendMessageJob.name=Envio Mensajes
+jdSendMessageJob.interval=60
+jdSendMessageJob.minHour=8
+jdSendMessageJob.maxHour=18
+
+# Parametros autenticacion pdf
+# Texto contrato aceptación servicios Autenticación Fuerte
+autenticacion.contrato.textoContrato=/gh_web/PORTALPJ3/Autenticacion/contrato/textoContrato.txt
+
+# Configuración contrato PDF
+autenticacion.contrato.imagenCabecera=/gh_web/PORTALPJ3/Autenticacion/imagen/logoBanco.jpg
+autenticacion.contrato.tamanoFuente=6
+autenticacion.contrato.tipoFuente=COURIER
+
+# Carta Acuse recibo de tokens
+autenticacion.carta.imagenCabecera=/gh_web/PORTALPJ3/Autenticacion/imagen/logoBC0M.jpg
+autenticacion.carta.tamanoFuente=8
+#TIMES_ROMAN, HELVETICA, COURIER
+autenticacion.carta.tipoFuente=COURIER
+autenticacion.carta.nombreBanco=Itaú
+autenticacion.carta.nit=NIT\: 8600076603\n
+autenticacion.carta.titulo1=Autenticaci\u00F3n Fuerte\n
+autenticacion.carta.titulo2=Inventario de Itaú Tokens\n
+autenticacion.carta.titulo3=Reporte de Itaú Tokens Entregados al Cliente\n
+autenticacion.carta.columna1=Identificacion
+autenticacion.carta.columna2=Fecha Vencimiento
+autenticacion.carta.columna3=Serial Itaú Token
+autenticacion.carta.total=Total Helm Itaú Entregados
+autenticacion.carta.firmaSello=Certifico que recibi los Itaú Token\nen perfecto estado\nFirma o Sello
+
+#Numero Maximo de tokens por carga
+autenticacion.inventario.maxTkCarga=500
+
+#Numero Maximo de tokens a validar
+autenticacion.inventario.maxTkValida=10000
+
+# Parametros web
+web.maxRegPagina=20
+web.maxNumPaginas=10
+
+# Parametros Nota Debito
+autenticacion.nd.aplicacion= 
+autenticacion.nd.aplicacionExterna=PORTAL
+autenticacion.nd.causal=0
+autenticacion.nd.codigoCargo=687
+autenticacion.nd.descripcion=COSTO TOKEN
+autenticacion.nd.empleado=0
+autenticacion.nd.moneda=COP
+autenticacion.nd.codigoCargoItoken=734
+
+
+#Parámetros Clave Audio Respuesta TecnoEvolución
+autenticacion.tecnoEvolucion.tramaClaveAudioRespuesta=0169
+
+# Parametros Costo por Token
+autenticacion.ct.canal=78
+autenticacion.ct.empleado=0
+autenticacion.ct.codigoTransaccion=694
+autenticacion.ct.causalTransaccion=12
+autenticacion.ct.subproductoOrigen=
+autenticacion.ct.indicadorConsultaPrevia=0
+autenticacion.ct.identificadorOperacion=0
+autenticacion.ct.destinoTrx=69
+autenticacion.ct.nroTransaccionesBCR=0
+autenticacion.ct.nroTransaccionesACH=1
+autenticacion.ct.origen=Portal
+autenticacion.ct.codigoTransaccionIToken=733
+autenticacion.ct.reference=Solicitud de tokens
+autenticacion.ct.infoadicional=Operacion consulta valor transaccion
+
+
+# Informacion de usuario de Jobs
+infoUsuario.canal=0
+infoUsuario.direccionIp=127.0.0.1
+infoUsuario.session=sessionJobAutenticacion
+infoUsuario.nombreUsuario=JOB
+infoUsuario.clienteNumeroIdentificacion=NA
+infoUsuario.clienteTipoIdentificacion=NA
+infoUsuario.empresaNumeroIdentificacion=NA
+infoUsuario.empresaTipoIdentificacion=NA
+infoUsuario.login=JOB
+infoUsuario.refTransaccion=NA
+
+
+# Correo de notificacion de solicitud de codigos de Em
+autenticacion.notificacionCodEm=jorge.gonzalez@grupohelm.com
+
+#autenticacion.contrato.textoContratoGrupoEmpresarial
+autenticacion.contrato.textoContratoGrupoEmpresarial=/gh_web/PORTALPJ3/Autenticacion/contrato/textoContratoGrupoEmpresarial.txt
+url.resumen.productos=/consultaproductos/resumen?PAG=consResumen&SESION=
+autenticacion.grupo.error.CLIENTE_NO_REGISTRA_GRUPO_EMP=El cliente no registra en Grupo Empresarial.
+autenticacion.grupo.error.ERROR_066=No se encontro el cliente, número de identificación erroneo (66)
+
+# Ruta reportes PDF de inscripcion de grupos empresariales
+rutaReportesPFD=/gh_data/PORTALJPAT3/data/formatos/fillgeneration/
+
+# Numero de dias máximo para el vencimiento de Token Administrador
+autenticacion.numeroMaximoDiasVencimientoToken=90
+
+# Ubicación de los archivos de carga masiva de Token
+autenticacion.rutaArchivosExcel=/gh_web/PORTALPJ3/Autenticacion/Excel
+
+# Nombre de la hoja de excel donde se están ubicados los datos de carga de token
+autenticacion.hojaExcel=BOINFILER
+#Identificador que determina si debe usarse una ubicacion central o si se determina la ubicación de los token segun la ubicacion del beneficiario
+autenticacion.UsarUbicacionCentral=1
+
+# Id de la ubicación centralizada
+autenticacion.IdUbicacion=2
+
+# Nombre de la ubicacion centralizada
+autenticacion.NombreUbicacion=BOGOTA D C
+
+# Codigo de la ubicacion centralizada
+autenticacion.CodUbicacion=001
+
+#Identificador que determina si debe leerse el Id del token del archivo o el numero de tokens 
+autenticacion.LeerIdToken=1
+
+# Valores que se insertarán en la tabla MIG_RSA_TOKEN
+autenticacion.Valor_OLA = 0
+autenticacion.Valor_Es_Anticipado = 0
+autenticacion.Valor_Es_Migrado = 0

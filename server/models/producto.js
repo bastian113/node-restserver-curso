@@ -15,6 +15,10 @@ var productoSchema = new Schema({
         type: String,
         required: false
     },
+    img: {
+        type: String,
+        required: false
+    },
     disponible: {
         type: Boolean,
         required: true,
@@ -28,7 +32,7 @@ var productoSchema = new Schema({
     usuario: {
         type: Schema.Types.ObjectId,
         ref: 'Usuario'
-    }
+    },
 });
 
 
